@@ -56,7 +56,7 @@ const submitHandler = (event) => {
 
   const expenseData = {
     title: enteredTitle,
-    amount: enteredAmount,
+    amount: +enteredAmount,
     //내장된 날짜 생성자로 새로운 날짜를 구성함. 
     // 해당 날짜 문자열을 분석해서 날짜 객체로 변환 후 enteredDate로 전달함.
     date: new Date(enteredDate) 
@@ -88,6 +88,7 @@ const submitHandler = (event) => {
       </div>
 
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>Cancel</button>
         <button type="submit" >Add Expense</button>
       </div>
 
